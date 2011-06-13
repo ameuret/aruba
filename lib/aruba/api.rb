@@ -257,6 +257,10 @@ module Aruba
     def _write_interactive(input)
       @interactive.stdin.write(input)
     end
+    
+    def stop
+      @last_exit_status = @interactive.stop!(@aruba_keep_ansi)
+    end
 
     def _ensure_newline(str)
       str.chomp << "\n"

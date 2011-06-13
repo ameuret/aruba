@@ -36,3 +36,8 @@ Feature: Interactive process control
     When I run `mv rename_me renamed` interactively
     Then a directory named "renamed" should exist
     And a directory named "rename_me" should not exist
+
+  Scenario: Stop a process under interaction
+    When I run `ruby` interactively
+    And I stop the running process
+    Then the exit status should be 15

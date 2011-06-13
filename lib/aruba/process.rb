@@ -55,7 +55,14 @@ module Aruba
         @process.exit_code
       end
     end
-
+    
+    def stop!(keep_ansi)
+      if @process
+        @process.stop
+        stop(keep_ansi)
+      end
+    end
+      
     private
 
     def wait_for_io(&block)

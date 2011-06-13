@@ -71,6 +71,10 @@ When /^I type "([^"]*)"$/ do |input|
   type(input)
 end
 
+When /^I stop the running process$/ do
+  stop
+end
+
 Then /^the output should contain "([^"]*)"$/ do |expected|
   assert_partial_output(expected, all_output)
 end
